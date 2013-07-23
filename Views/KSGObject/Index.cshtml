@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ksg.ViewModels.KSGObjectViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="ksgitemcontainer">
+@foreach (var item in Model) {
+    
+    <div class="ksgitem">
+        <div class="ksgitempicborder">
+            <img class="ksgitempic" src="@Url.Content("~/" + item.DefaultPicValue)" />
+        </div>
+        <h3>@Html.ActionLink(item.Title, "Details",  new {id = item.InternalID})</h3>
+        <p>@Html.DisplayFor(model => item.Description)</p>
+    </div>
+  
+}
+
+</div>

@@ -1,0 +1,51 @@
+﻿@model ksg.ViewModels.KSGPropertyInfo
+@using ksg.Helpers
+
+
+<tr>
+    @using (Html.BeginCollectionItem("Properties"))
+    {
+        
+        <td>
+        @Html.TextBoxFor(x => x.Name, new { style = "width:80px;" })
+        </td>
+        <td>
+        @Html.DropDownListFor(x => x.ValueTypeName, new SelectList(Model.ValueTypes), new {@class = "resource_type"})
+        </td>
+        <td class ="values">
+        @Html.TextBoxFor(x => x.Value, new { style = "width:150px;", @class = "resource_value" })
+        </td> 
+    
+     <script type="text/javascript" src="@Url.Content("~/Scripts/create-edit-utils.js")"></script>
+          
+    <script>
+
+        TogglePropertyValues();
+    
+    $("#@(Html.ClientIdFor(x => x.ValueTypeName))").change(function () {
+
+        if($(this).val() == "Geocode")
+        {
+            $("#@(Html.ClientIdFor(x => x.Value))").unbind('focus');
+            $("#@(Html.ClientIdFor(x => x.Value))").focus(function () {
+                focused_geocode_box = $(this).attr('id');
+                $("#geocoder_dialog").dialog("open");
+            });
+        }
+        else if ($(this).val() == "Date-Time") {
+            $("#@(Html.ClientIdFor(x => x.Value))").unbind('focus');
+            $("#@(Html.ClientIdFor(x => x.Value))").datetimepicker();
+        }
+        else {
+            $("#@(Html.ClientIdFor(x => x.Value))").unbind('focus');
+        }
+    });
+
+
+   
+
+</script>
+    }
+  </tr>  
+
+

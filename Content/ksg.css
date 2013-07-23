@@ -1,0 +1,546 @@
+
+html, body {
+	background: White;
+    font-family:sans-serif;
+    overflow: auto;
+    margin:0;
+    padding:0;
+}
+
+ a, a:visited {
+     color:purple;
+}   
+
+div a, a:visited {
+     color:white;
+}  
+
+.menu {
+    height:42px;
+    position:relative;
+    font-size:11px;
+    margin: 0;
+    z-index:1000;
+}
+.menu ul li a {
+    display:block;
+    text-decoration:none;
+    color:#fff;
+    font-weight:bold;
+    width:81px; 
+    height:42px; 
+    text-align:center;
+    border-bottom: 0;
+    background-color:purple;
+    line-height:48px; 
+    font-size:11px; 
+    overflow:hidden;
+    padding-left: 1px;
+}
+/* End Caps Styling */
+.menu .left_nosub {
+   background-color:purple;
+    padding-left: 1px;
+    margin-right: -1px;
+}
+.menu .right_hassub {
+   background-color:purple;
+}
+.menu .right_nosub {
+    background-color:purple;
+}
+.menu ul {padding:0; margin:0; list-style: none;}
+.menu ul li {float:left; position:relative;}
+.menu ul li ul {display: none; text-align:right;}
+
+/* Button ":hover" Styling */
+.menu ul li:hover a {background-color:white; color:purple;}
+.menu ul li:hover ul li a.center_hassub {background:#6a3; color:#fff;}
+.menu ul li:hover ul li:hover a.center_hassub {background:#6fc; color:#544a3a;}
+.menu ul li:hover ul li ul {display: none;}
+
+.menu ul li:hover .left_nosub {background-color:purple; color:white; font-weight:1000; text-decoration:underline;}
+.menu ul li:hover .right_hassub {color:white;  ;}
+.menu ul li:hover .right_nosub {color:white;  ;}
+
+/* DropDown Styling */
+.menu ul li:hover ul li a {background-image: none; font-weight:bold; text-decoration: underline; display:block;height: 28px; line-height: 26px; color:#200033; width:142px; text-align:right; margin: 0; padding:0 0 0 11px; padding-right:20px; font-weight:normal;}
+.menu ul li:hover ul {
+    margin: 0 0 0 3px;
+    padding: 0;
+    background-repeat:no-repeat;
+    background-position:bottom right; 
+    display:block;
+    margin-right:10px;
+    position:absolute;
+    left:-94px;
+    border-color:purple;
+    border-style:solid;
+    border-width:1px;
+    border-top-width:0px;
+    
+}
+
+/* DropDown Menus ":active" or "Selected" Styling */
+.menu ul li:hover ul .sub_active {
+    margin-right: 1px;
+}
+
+/* DropDown Menus ":hover" Styling */
+.menu ul li:hover ul li a:hover {font-weight:bold; text-decoration:underline;}
+
+.menu ul li:hover ul li:hover ul {display:block; position:absolute; left:105px; top:0;}
+.menu ul li:hover ul li:hover ul.left {left:-105px;}
+
+.wrap{
+position:relative;
+top:20px;
+left:20px;
+float:left;
+width:500px;
+height:210px;
+background:#200033 url('images/presentation/grape.png') no-repeat center 120px;
+border:3px solid #f0f0f0;
+padding:0;
+padding-left:10px;
+}    
+ 
+ 
+ div#main_content {
+     float:left;
+     margin-left:20px;
+     color:#000;
+ }
+
+
+div#ksg_banner {
+    width:100%;
+    height:50px;
+    margin-top:0px;
+    margin-left:0px;
+    margin-right: 0px;
+    background-color:purple;
+    border-radius:0;
+    padding:0;
+    margin-bottom:20px;
+}
+
+
+
+div#banner_title {
+    font-family: 'Candal', arial, serif;
+    font-size:14pt;
+    font-weight:bold;
+    float:left;
+    margin-left:20px;
+    margin-top:5px;
+    height:30px;
+    padding:4px;
+    background: -moz-linear-gradient(top, purple, black);
+    vertical-align:center;
+}
+
+
+ .label {
+    float:left;
+}
+
+#main_search{
+    margin-left:50px;
+    width:300px;
+    border-radius:10px; 
+    margin-top:20px;
+}
+
+
+div#account_menu{
+    float:right;
+    font-weight:bold;
+    font-size:8pt;
+    margin-right:100px;
+}
+
+div {
+    background:none;
+    color:white;
+    border-radius:15px;
+}
+
+div p{
+    margin:10px;
+}
+
+div#login {
+     background: -moz-linear-gradient(top, purple, black);; 
+    width: 300px;
+}
+
+div#login  legend {
+    color:black;
+}
+
+div#object_create legend {
+	color:black;
+}
+
+div#object_create {
+     background: -moz-linear-gradient(top, purple, black);
+     padding:10px;
+}
+
+div#sidebar  {
+    clear:both;
+    float:left;
+    height:500px;
+    border-right-width:2px;
+    border-right-style:solid;
+    border-right-color: gray;
+    border-radius:0px;
+}
+
+div#sidebar .spacer {
+    width:200px;
+}
+
+
+
+div #submit{
+   width:80px;
+   background-color:black;
+   color:white;
+}
+
+div#register {
+     background: -moz-linear-gradient(top, purple, black);; 
+    width: 300px;
+}             
+
+div.object img {
+    width: 128px;
+    height: 128px;
+}
+
+div#object_create{
+    width: 500px;
+}
+
+div#object_create .file {size:200px;}
+
+
+
+div.container {padding:20px; float:left;}
+
+div#login div.container {padding:5px; float:left;}
+
+div#login div.container {padding:5px; float:left;} 
+
+div#object_create input, textarea {
+    width:250px;
+    margin-left:10px;
+    margin-right:30px;  
+    margin-bottom:20px;
+}
+
+
+div#object_create .label {
+    width:100px;
+    background:none;
+    font-size:8pt;
+    font-weight:bold;
+    text-align:right;
+    float:left;
+    vertical-align: top;
+    padding-top:0;
+    color:black;
+
+}
+
+div#login input, textarea {
+    width:150px;
+    margin-left:10px;
+    margin-right:30px;  
+    margin-bottom:20px;
+}
+
+
+div#login .label {
+    width:50px;
+    background:none;
+    font-size:8pt;
+    font-weight:bold;
+    text-align:right;
+    float:left;
+    vertical-align: top;
+    padding-top:0;
+    color:black;
+}
+
+
+ div#object_create #submit { float:right; width:80px;}
+
+  div#login #submit { float:right; width:80px;}  
+
+.auto_name {
+    font-size:12pt;
+    font-weight:bold;
+}
+
+.auto_desc {
+    font-size: 8pt;
+}
+
+.auto_date {
+    font-size:8pt;
+    font-style:italic;
+    text-align:right;
+}
+
+.object {
+    background: -moz-linear-gradient(top, purple, black);; 
+    width: 400px;
+    overflow:auto;
+    margin-left:220px;
+
+}
+
+.object .header{
+    border-radius:0px;
+    padding:5px;
+    font-size:14pt;
+    font-weight: bold;
+    border-bottom:white;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+}
+
+.object .content {
+}
+
+.object .content img {
+    width:128px;
+    height:128px;
+    
+}
+
+
+
+.object .content .picborder {
+    background-color:gray;
+    padding:10px;
+    float: left;
+}
+
+.object .content .contentright {
+    overflow:auto;
+    margin-left:150px;
+}
+
+.object .content .contentright p {
+    padding-bottom:4px;
+}
+.object .content .contentright .extra {
+    border-top-width:2px;
+    border-top-style:inset;
+    border-top-color:#eeeeee;
+    margin-top:8px;
+    padding-top:2px;
+    border-radius:0px;
+}
+
+div.thumbs {
+    float:right;
+    padding:5px;
+}
+
+button.tools {
+  font-size:16pt; 
+  margin-left:50px;
+}
+
+button.ui-button-icons-only{
+    width:30px;
+}
+
+div#toolbox {
+    visibility:hidden;
+    position:absolute;
+    width:100px;
+    height:100px;
+    z-index:10;
+    background:#eeeeee;
+    border-style:solid;
+    border-color:black;
+    border-width:3px;
+    padding-top:3px;
+    padding-left:20px;
+    font-size:20pt;
+}
+
+div#toolbox button#thumbup {
+     background-image:url('base/thumbs.jpg');
+     background-repeat:no-repeat;
+     background-position:-2px -4px;
+     width:31px;
+     
+     
+}
+
+div#toolbox div#toolbox_top{
+    height:20px;
+    border-bottom-color:black;
+    border-bottom-width:1px;
+    border-bottom-style:solid;
+    padding:0px;
+    border-radius:0px;
+    margin-bottom:5px;
+}
+
+div#toolbox div#toolbox_top marquee {
+    font-size:8pt;
+    color:black;
+}
+
+div#toolbox button#thumbdown {
+    background-image:url('base/thumbs.jpg');
+     background-repeat:no-repeat;
+     background-position:-33px -4px;
+     width:31px;
+}
+
+div.object_extra {
+    display:inline;
+    overflow:auto;
+    margin-left:110px;
+}
+
+div.object_small_container {
+    border-radius:0px;
+    font-size:10pt;
+    overflow:auto;   
+    width:600px;
+}
+
+div.object_small {
+    background: -moz-linear-gradient(top, purple, black);
+    width:80px;
+    height:80px;
+    border-radius:10px;
+    border-color:black;
+    border-style:groove;
+    border-width:1px;
+    font-size:8px;
+    float:left;
+    margin-bottom:2px;
+    margin-top:2px;
+}
+div.object_small .hidden_uid, .hidden_author, .hidden_description, .hidden_creation_date, .hidden_title {visibility:hidden;
+    padding:0;
+    margin:0;
+    width:0;
+    height:0;
+}
+div.object_small div.object_small_header { 
+    font-weight:bold;
+    border-radius:0px;
+    border-color:white;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    padding:2px;
+    padding:bottom 3px;
+}
+div.object_small div.object_small_content {}
+div.object_small div.object_small_content div.pic_small {
+    
+}
+
+div.object_small_container div.options{
+    float:right;
+    margin-right:100px;
+    vertical-align: top;
+}
+
+
+
+div.object_details div.description, div.author, div.creation_date, div.title {
+    font-style:italic;
+    border-radius:0px;
+    border-color:gray;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    padding:2px;
+    padding:bottom 3px;
+    color:purple;
+}
+
+#object_tabs a {
+    font-size:10pt;
+}
+
+
+div.object_details{
+    height:250px;
+    float:left;
+    margin-left:10px;
+    width: 400px;
+    border-right-color: black;
+    border-right-width:2px;
+    border-right-style:inset;
+    border-radius:0;
+    padding-right:10px;
+}
+
+.my_creations_pane {
+    width:700px;
+    height:500px;
+}
+
+.object_scroller {
+    float:left;
+}
+
+.object_scroller .scroll_pane_container {
+    width:80px;
+    height:420px;
+    border-color:white;
+    border-width:1px;
+    border-style:groove;
+    overflow:hidden;
+}
+
+.scroll_up, .scroll_down {
+    width:110px;
+    font-size:16pt;
+}
+
+.up_button_container button.ui-button-icon-only {
+    width:85px;
+    margin-bottom:5px;
+}
+.down_button_container button.ui-button-icon-only {
+    width:85px;
+    margin-top:5px;
+}
+
+
+
+.properties_basic_box {
+    padding-top:10px;
+    margin-left:100px;
+    background-color:white;
+    vertical-align:top;
+    margin-top:50px;
+    color:purple;
+    float:left;
+    width:500px;
+    border-color:gray;
+    border-width:1px;
+    border-style:groove;
+    overflow:auto;
+    height:300px;
+}
+
+.properties_basic_box .options {
+    float:right;
+    margin-right:10px;
+}
+

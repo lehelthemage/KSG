@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b6ff46c3e9504a6195ab77f70916b6b9" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="ksgobjectsModel.ksgbehavior" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ksgobjectsModel.ksgbehaviortrigger" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ksgobjectsModel.ksgcontext" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ksgobjectsModel.ksgmedia" Width="1.5" PointX="7.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ksgobjectsModel.ksgmediatype" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ksgobjectsModel.ksgparent" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ksgobjectsModel.Resource" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ksgobjectsModel.ResourceType" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgmedia_ksgmediatype" ManuallyRouted="false" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgmedia_Resource" ManuallyRouted="false" />
+        <AssociationConnector Association="ksgobjectsModel.FK_Resource_ResourceType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ksgobjectsModel.ksgvote" Width="1.5" PointX="10" PointY="7.5" />
+        <EntityTypeShape EntityType="ksgobjectsModel.ksgvotetype" Width="1.5" PointX="9.4170578631651853" PointY="3.7223300653148117" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgvote_ksgvotetype" />
+        <EntityTypeShape EntityType="ksgobjectsModel.ksgobjectproperty" Width="1.5" PointX="3.125" PointY="2.25" />
+        <EntityTypeShape EntityType="ksgobjectsModel.sysdiagram" Width="1.5" PointX="5.843210798615222" PointY="25.842144620531307" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgobjectproperty_Resource" />
+        <EntityTypeShape EntityType="ksgobjectsModel.ksgproperty" Width="1.5" PointX="3.375" PointY="10.125" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgobjectproperty_ksgproperty" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgproperty_Resource" />
+        <EntityTypeShape EntityType="ksgobjectsModel.Geocode" Width="1.5" PointX="4.2610761096054111" PointY="7.7646179384387182" />
+        <AssociationConnector Association="ksgobjectsModel.FK_Geocode_Resource" />
+        <EntityTypeShape EntityType="ksgobjectsModel.ksgobject" Width="1.5" PointX="11.426975397126272" PointY="1.9231977471724142" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgmedia_ksgobject" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgobject_Resource1" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgobject_Resource2" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgobjectproperty_ksgobject" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgparent_ksgobject" />
+        <AssociationConnector Association="ksgobjectsModel.FK_ksgparent_ksgparent" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

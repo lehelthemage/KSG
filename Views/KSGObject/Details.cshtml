@@ -1,0 +1,46 @@
+﻿@model ksg.ViewModels.KSGObjectViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ksgobject</legend>
+
+    <div id="properties_window" style="float:right;">
+            <table id="properties_list">
+             <tr>
+                 <td>Name</td>
+                 <td>Type</td>
+                 @if(!Model.IsCategory)
+                 {
+                    <td>Value</td>
+                 }
+             </tr>
+           <tr><td>
+               @foreach (var prop in Model.Properties)
+               {
+                @Html.DisplayFor(x => prop)
+               }
+
+              </td>
+            </table>
+        </div>
+    <div class="object_basics" style="float:left">
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+        <div>
+            <img class="ksgitempic" src="@Url.Content("~/" + Model.DefaultPicValue)" />
+        </div>
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.InternalID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

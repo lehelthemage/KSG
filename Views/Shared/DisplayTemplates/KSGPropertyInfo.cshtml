@@ -1,0 +1,21 @@
+﻿@model ksg.ViewModels.KSGPropertyInfo
+@using ksg.Helpers
+
+
+<tr>
+    @using (Html.BeginCollectionItem("Properties"))
+    {
+        
+        <td>
+        @Html.DisplayFor(x => x.Name, new { style = "width:80px;" })
+        </td>
+        <td>
+        @Html.DisplayFor(x => x.ValueTypeName)
+        </td>
+        <td>
+        @Html.DisplayFor(x => x.Value, new { style = "width:80px;" })
+        </td>
+    }  
+    
+  </tr>  
+

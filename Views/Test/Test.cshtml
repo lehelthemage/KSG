@@ -1,0 +1,37 @@
+@model ksg.Models.TestContainer 
+
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+@using (Html.BeginForm("UploadPic", "KSGObject", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    Html.ValidationSummary(true);
+
+    Html.TextBoxFor(x => x.Dummy);
+
+    foreach (ksg.Models.Test z in Model.tests)
+    {
+        //Html.EditorFor(x => z);
+        Html.TextBoxFor(x => z.x);
+    }
+
+    @Html.Partial("SinglePicUploaderPartial")
+    
+    
+    <input id="picfilename" />
+    <input type="submit" value="Test" />
+  
+    
+}
+
+<script>
+    picUploadCallback = function (path) {
+        $("#picfilename").val(path);
+    };
+</script>
+
+
+
+   

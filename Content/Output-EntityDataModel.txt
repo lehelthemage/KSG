@@ -1,0 +1,56 @@
+﻿Generated model file: ksgobjects.edmx.
+Loading metadata from the database took 00:00:02.0206861.
+Generating the model took 00:00:05.7702392.
+Added the connection string to the Web.Config file.
+Successfully registered the assembly 'System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' in the Web.Config file.
+Generated model file: ksgobjects.edmx.
+Loading metadata from the database took 00:00:01.1992387.
+Generating the model took 00:00:01.9879851.
+Successfully registered the assembly 'System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' in the Web.Config file.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+Generated model file: ksgobjects.edmx.
+Loading metadata from the database took 00:00:00.6714234.
+Generating the model took 00:00:01.5474780.
+Unable to update the Web.Config file because of the following exception: 'The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.'
+Unable to register the assembly 'System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' in the Web.Config file because of the following exception: 'The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.'
+Writing the .edmx file took 00:00:00.0034523.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The model was generated with warnings or errors.
+Please see the Error List for more details. These issues must be fixed before running your application.
+Loading metadata from the database took 00:00:00.8266750.
+Generating the model took 00:00:04.1656030.
+Unable to update the Web.Config file because of the following exception: 'The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.'
+Unable to register the assembly 'System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' in the Web.Config file because of the following exception: 'The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.'
+Writing the .edmx file took 00:00:00.0010254.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The 'connectionStrings' start tag on line 11 position 4 does not match the end tag of 'configuration'. Line 90, position 3.
+The model was generated with warnings or errors.
+Please see the Error List for more details. These issues must be fixed before running your application.
+Loading metadata from the database took 00:00:01.0616353.
+Generating the model took 00:00:01.1478100.
+Added the connection string to the Web.Config file.
+Successfully registered the assembly 'System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' in the Web.Config file.
+Writing the .edmx file took 00:00:00.0010390.
+The model was generated with warnings or errors.
+Please see the Error List for more details. These issues must be fixed before running your application.
+Loading metadata from the database took 00:00:00.9873925.
+Generating the model took 00:00:00.9617128.
+Added the connection string to the Web.Config file.
+Successfully registered the assembly 'System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' in the Web.Config file.
+Writing the .edmx file took 00:00:00.0009781.
+The model was generated with warnings or errors.
+Please see the Error List for more details. These issues must be fixed before running your application.
+Loading metadata from the database took 00:00:01.1209326.
+Generating the model took 00:00:00.5513982.
+Successfully registered the assembly 'System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' in the Web.Config file.

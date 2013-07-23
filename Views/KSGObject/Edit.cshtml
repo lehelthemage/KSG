@@ -1,0 +1,159 @@
+﻿@model ksg.ViewModels.KSGObjectViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+
+     @Html.ValidationSummary(true)
+<fieldset>
+        <legend>ksgobject</legend>
+
+
+        <div id="properties_window" style="float:right;">
+            <table id="properties_list">
+             <tr>
+                 <td>Name</td>
+                 <td>Type</td>
+                 <td class="values">Value</td>
+             </tr>
+           <tr><td>
+               @foreach (var prop in Model.Properties)
+               {
+                @Html.EditorFor(x => prop)
+               }
+
+              </td>
+            </table>
+
+             @Html.Partial("GeocoderPartial")
+        </div>
+
+
+
+        <div class="object_basics">
+      
+             @Html.HiddenFor(model => model.InternalID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="pic">
+            @Html.LabelFor(model => model.DefaultPicValue)
+            @Html.HiddenFor(model => model.DefaultPicValue)
+         @if (Model.DefaultPicValue != null)
+         {
+             <img  class="ksgitempic" src= '../../@Url.Content(Model.DefaultPicValue)' />
+         }
+           
+        </div>
+
+             <div id="btnUploader1" style="margin-top: 10px;">
+                <noscript>
+                    <p>Please enable JavaScript to use file uploader.</p>
+                </noscript>
+            </div>
+
+            <div id="uploader1Preview" style="margin-top: 10px;">
+            </div>
+            
+             
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ParentNames, "Resource")
+        </div>
+@foreach (var parent in Model.ParentNames)
+{
+        <div class="editor-field">
+            @Html.Editor(parent)
+        </div>
+}
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description, "Description")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.AuthorUserName)
+        </div>
+
+       
+
+        </div>
+       <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+     
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery");
+     @Scripts.Render("~/bundles/jqueryui")
+     <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEnex8bA_44wRBh8SRQHTAexfCkVR6Yoc&sensor=false">
+    </script>
+    
+    <script type="text/javascript" src="@Url.Content("~/Scripts/create-edit-utils.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/geocoder.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-timepicker-addon.js")"></script>
+    
+
+   
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+         @if(Model.IsCategory)
+            {
+                <text>
+            HidePropertyValues();
+                </text>
+            }
+
+            var errorHandler = function(event, id, fileName, reason) {
+                qq.log("id: " + id + ", fileName: " + fileName + ", reason: " + reason);
+            };
+            var uploader = new qq.FineUploader({
+                element: $("#btnUploader1")[0],
+                debug: true,
+                request: {
+                    endpoint: "/upload/receiver"
+                },
+                callbacks: {
+                    onError: errorHandler
+                }
+            });
+
+       
+        
+    });
+
+    function getUrl(action, controller) {
+        var protocol = window.location.protocol;
+        var host = window.location.host;
+
+        var url = (protocol + '//' + host + '/');
+
+        if ((controller != null && controller != 'undefined') && (action != null && action != 'undefined'))
+            url += controller + '/' + action;
+
+        return url;
+    }
+    </script>
+    }
+

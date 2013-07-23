@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>KnowShowGo! Connect to Knowledge</title>
+ <meta charset="utf-8" />
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+       <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css">
+         <meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css" type="text/css" media="all" />
+<link rel="stylesheet" href="http://www.knowshowgo.com/css/ui-lightness/jquery-ui-1.8.11.custom.css" type="text/css" media="all" />
+<link href='http://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
+@Styles.Render("~/Content/ksg.css")
+@Styles.Render("~/Content/themes/base/css", "~/Content/css")
+@Styles.Render("~/Content/ksgobject.css")
+@Scripts.Render("~/bundles/modernizr")              
+</head>
+<body>
+
+    <!-- Header section for top bar -->
+    <header>
+        <div id="ksg_banner">
+            <div class="float-left">
+                <p id="banner_title" class="site-title">@Html.ActionLink("KnowShowGo", "Index", "Home")</p>
+            </div>
+            <div id="main_toolbar"></div>
+            <input id="main_search" value="Search" />
+            <div id="account_menu">
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                </div>
+            </div>
+    </header>
+
+ 
+    <!-- Sidebar for quick navigation (only visible after login) -->
+    @if(User.Identity.IsAuthenticated)
+    {
+    <div id="sidebar">
+        <div class="spacer">
+            <div id="logged_in_control_panel">
+                <button id="create_object">Create Object</button>
+            </div>
+        </div>
+    </div>
+    }
+
+    <div id="toolbox">
+<div id="toolbox_top"><div id="toolbox_marquee"></div></div>
+ <button id="thumbup"></button>&nbsp;<button id="thumbdown"></button>
+</div>          
+           
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+                <div class="float-right">
+                    <ul id="social">
+                        <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
+                        <li><a href="http://twitter.com" class="twitter">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        <script type="text/javascript" src="@Url.Content("~/Scripts/layout.js")"></script>
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

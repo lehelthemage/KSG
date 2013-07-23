@@ -1,0 +1,69 @@
+TTD:
+pluralsight courses
+
+April 17th: go through code and clean it up
+test after code changes, list new bugs
+
+-Edit page should correspond to either category or instance
+-edit page should have "add property"
+-update edit page to use newer uploader
+
+-Categories get 'parents' while instance/subject gets 'category'
+	and a category is required for all instances
+-'iscategory' checkbox does not remove textbox for value
+-need to be able to delete categories or hide them in some way (vote down?)
+-after fixing upload, clean up code with bundles!
+-fix autocomplete and try to clean up code
+-make sure this stuff works for both create and edit
+-Fix pic uploading
+
+-when choosing a parent, properties will be populated by inherited properties from parent)
+-add "Remove property" (this will not have at least 1 parent  delete inherited properties but hide them)
+-work on Parents, chosen, allow for more
+-create/edit should also have a way to remove added parents
+-Add multiple resources (pics, videos, audio, etc)
+-add comments
+-Add different rating types for properties (or another table)
+-Add user rater's rating
+-Add user page    
+-add categories that have property templates (no values needed; like a checkbox if property is just a template)
+-Editing should not replace values but append a new value and history should be preserved
+-Edits will be logged with editor's user info and what was changed when
+-Administrator level edit access (add a checkbox that only allows editing of objects by admins)
+(Edit field won't appear for core...nor should core object categories be listed--field for object 'core')
+-Test inheritance of properties
+-Add "add a property" to edit mode
+-Add rating front-end and back-end
+-Create object scroller control
+-Add user subscriptions to objects (add notifications system)
+-Add adding more than one parent and editing thereof
+-Add REST service to query for objects
+-Create html widget with context-sensitivity (properties that define what style-sheets, XSL to apply etc)
+-Test XSS functionality
+-Create forum for objects
+-Create "friends" list and messaging system
+-Create a user-customization system (eventually) so that people will see things the way they vote for them (on paper first)
+-Create "apps" for ksg (extensions) that community can develop
+-Create an "Interests" app/extension
+-Add facebook connectivity and make an app for facebook (import 'interests' from facebook, etc)
+-Add invitations/suggestions system.
+-Add privacy controls for users
+-Clean up and comment code
+-Add interface to highlight text from other web pages
+-Add uploading of videos and audio.
+-Add way to link indexes of media (start/stop of video )
+-prototype stations
+-think of ways objects can interact with each other
+-think how neural-networking can be employed (read up more about web 3.0 philsophy)
+-make other creation apps people can share with others (ensembles, collections, outfits, etc)
+-Add way to import wikiepedia stuff
+-Make UI pretty
+-Add/Edit multiple images/videos/audio
+
+
+
+-Create a java library for Android apps
+-Develop a barter app for android
+-Develop a 12-step meeting app for android
+-come up with new app ideas based on geocoding (dating, being alerted to things while moving around, etc)
+-upload live stream to ksg channel

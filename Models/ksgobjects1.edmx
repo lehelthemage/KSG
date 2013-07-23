@@ -1,0 +1,967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ksgobjectsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ksgobjectsModelStoreContainer">
+          <EntitySet Name="Geocode" EntityType="ksgobjectsModel.Store.Geocode" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ksgbehavior" EntityType="ksgobjectsModel.Store.ksgbehavior" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ksgbehaviortrigger" EntityType="ksgobjectsModel.Store.ksgbehaviortrigger" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ksgcontext" EntityType="ksgobjectsModel.Store.ksgcontext" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ksgmedia" EntityType="ksgobjectsModel.Store.ksgmedia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ksgmediatype" EntityType="ksgobjectsModel.Store.ksgmediatype" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ksgobject" EntityType="ksgobjectsModel.Store.ksgobject" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ksgobjectproperty" EntityType="ksgobjectsModel.Store.ksgobjectproperty" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ksgparent" EntityType="ksgobjectsModel.Store.ksgparent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ksgproperty" EntityType="ksgobjectsModel.Store.ksgproperty" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ksgvote" EntityType="ksgobjectsModel.Store.ksgvote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ksgvotetype" EntityType="ksgobjectsModel.Store.ksgvotetype" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Resource" EntityType="ksgobjectsModel.Store.Resource" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ResourceType" EntityType="ksgobjectsModel.Store.ResourceType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="ksgobjectsModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Geocode_Resource" Association="ksgobjectsModel.Store.FK_Geocode_Resource">
+            <End Role="Resource" EntitySet="Resource" />
+            <End Role="Geocode" EntitySet="Geocode" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgmedia_ksgmediatype" Association="ksgobjectsModel.Store.FK_ksgmedia_ksgmediatype">
+            <End Role="ksgmediatype" EntitySet="ksgmediatype" />
+            <End Role="ksgmedia" EntitySet="ksgmedia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgmedia_ksgobject" Association="ksgobjectsModel.Store.FK_ksgmedia_ksgobject">
+            <End Role="ksgobject" EntitySet="ksgobject" />
+            <End Role="ksgmedia" EntitySet="ksgmedia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgmedia_Resource" Association="ksgobjectsModel.Store.FK_ksgmedia_Resource">
+            <End Role="Resource" EntitySet="Resource" />
+            <End Role="ksgmedia" EntitySet="ksgmedia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgobject_Resource1" Association="ksgobjectsModel.Store.FK_ksgobject_Resource1">
+            <End Role="Resource" EntitySet="Resource" />
+            <End Role="ksgobject" EntitySet="ksgobject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgobject_Resource2" Association="ksgobjectsModel.Store.FK_ksgobject_Resource2">
+            <End Role="Resource" EntitySet="Resource" />
+            <End Role="ksgobject" EntitySet="ksgobject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgobjectproperty_ksgobject" Association="ksgobjectsModel.Store.FK_ksgobjectproperty_ksgobject">
+            <End Role="ksgobject" EntitySet="ksgobject" />
+            <End Role="ksgobjectproperty" EntitySet="ksgobjectproperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgobjectproperty_ksgproperty" Association="ksgobjectsModel.Store.FK_ksgobjectproperty_ksgproperty">
+            <End Role="ksgproperty" EntitySet="ksgproperty" />
+            <End Role="ksgobjectproperty" EntitySet="ksgobjectproperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgobjectproperty_Resource" Association="ksgobjectsModel.Store.FK_ksgobjectproperty_Resource">
+            <End Role="Resource" EntitySet="Resource" />
+            <End Role="ksgobjectproperty" EntitySet="ksgobjectproperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgparent_ksgobject" Association="ksgobjectsModel.Store.FK_ksgparent_ksgobject">
+            <End Role="ksgobject" EntitySet="ksgobject" />
+            <End Role="ksgparent" EntitySet="ksgparent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgparent_ksgparent" Association="ksgobjectsModel.Store.FK_ksgparent_ksgparent">
+            <End Role="ksgobject" EntitySet="ksgobject" />
+            <End Role="ksgparent" EntitySet="ksgparent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgproperty_Resource" Association="ksgobjectsModel.Store.FK_ksgproperty_Resource">
+            <End Role="Resource" EntitySet="Resource" />
+            <End Role="ksgproperty" EntitySet="ksgproperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgvote_ksgvotetype" Association="ksgobjectsModel.Store.FK_ksgvote_ksgvotetype">
+            <End Role="ksgvotetype" EntitySet="ksgvotetype" />
+            <End Role="ksgvote" EntitySet="ksgvote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resource_ResourceType" Association="ksgobjectsModel.Store.FK_Resource_ResourceType">
+            <End Role="ResourceType" EntitySet="ResourceType" />
+            <End Role="Resource" EntitySet="Resource" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Geocode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ResourceID" Type="bigint" Nullable="false" />
+          <Property Name="location" Type="geography" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ksgbehavior">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="WebServiceUrl" Type="varchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ksgbehaviortrigger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContextID" Type="bigint" Nullable="false" />
+          <Property Name="ObjectID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BehaviorID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ksgcontext">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ksgmedia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ResourceID" Type="bigint" Nullable="false" />
+          <Property Name="KSGObjectID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="UpVotes" Type="int" Nullable="false" />
+          <Property Name="DownVotes" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ksgmediatype">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ksgobject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="DefaultPicID" Type="bigint" />
+          <Property Name="DescriptionID" Type="bigint" Nullable="false" />
+          <Property Name="AuthorID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DefaultParentID" Type="uniqueidentifier" />
+          <Property Name="CoreObject" Type="bit" />
+          <Property Name="Category" Type="bit" />
+        </EntityType>
+        <EntityType Name="ksgobjectproperty">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ksgobjectid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ksgpropertyid" Type="bigint" Nullable="false" />
+          <Property Name="ValueID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="ksgparent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ChildID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpVotes" Type="int" Nullable="false" />
+          <Property Name="DownVotes" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ksgproperty">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="ValueTypeID" Type="bigint" Nullable="false" />
+          <Property Name="UpVotes" Type="int" />
+          <Property Name="DownVotes" Type="int" />
+        </EntityType>
+        <EntityType Name="ksgvote">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VoteTypeID" Type="tinyint" Nullable="false" />
+          <Property Name="UpVote" Type="bit" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ksgvotetype">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descriptoin" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ResourceTypeID" Type="tinyint" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResourceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Public" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Geocode_Resource">
+          <End Role="Resource" Type="ksgobjectsModel.Store.Resource" Multiplicity="1" />
+          <End Role="Geocode" Type="ksgobjectsModel.Store.Geocode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Geocode">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgmedia_ksgmediatype">
+          <End Role="ksgmediatype" Type="ksgobjectsModel.Store.ksgmediatype" Multiplicity="1" />
+          <End Role="ksgmedia" Type="ksgobjectsModel.Store.ksgmedia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgmediatype">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgmedia">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgmedia_ksgobject">
+          <End Role="ksgobject" Type="ksgobjectsModel.Store.ksgobject" Multiplicity="1" />
+          <End Role="ksgmedia" Type="ksgobjectsModel.Store.ksgmedia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgobject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgmedia">
+              <PropertyRef Name="KSGObjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgmedia_Resource">
+          <End Role="Resource" Type="ksgobjectsModel.Store.Resource" Multiplicity="1" />
+          <End Role="ksgmedia" Type="ksgobjectsModel.Store.ksgmedia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgmedia">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgobject_Resource1">
+          <End Role="Resource" Type="ksgobjectsModel.Store.Resource" Multiplicity="0..1" />
+          <End Role="ksgobject" Type="ksgobjectsModel.Store.ksgobject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgobject">
+              <PropertyRef Name="DefaultPicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgobject_Resource2">
+          <End Role="Resource" Type="ksgobjectsModel.Store.Resource" Multiplicity="1" />
+          <End Role="ksgobject" Type="ksgobjectsModel.Store.ksgobject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgobject">
+              <PropertyRef Name="DescriptionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgobjectproperty_ksgobject">
+          <End Role="ksgobject" Type="ksgobjectsModel.Store.ksgobject" Multiplicity="1" />
+          <End Role="ksgobjectproperty" Type="ksgobjectsModel.Store.ksgobjectproperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgobject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgobjectproperty">
+              <PropertyRef Name="ksgobjectid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgobjectproperty_ksgproperty">
+          <End Role="ksgproperty" Type="ksgobjectsModel.Store.ksgproperty" Multiplicity="1" />
+          <End Role="ksgobjectproperty" Type="ksgobjectsModel.Store.ksgobjectproperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgproperty">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgobjectproperty">
+              <PropertyRef Name="ksgpropertyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgobjectproperty_Resource">
+          <End Role="Resource" Type="ksgobjectsModel.Store.Resource" Multiplicity="0..1" />
+          <End Role="ksgobjectproperty" Type="ksgobjectsModel.Store.ksgobjectproperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgobjectproperty">
+              <PropertyRef Name="ValueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgparent_ksgobject">
+          <End Role="ksgobject" Type="ksgobjectsModel.Store.ksgobject" Multiplicity="1" />
+          <End Role="ksgparent" Type="ksgobjectsModel.Store.ksgparent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgobject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgparent">
+              <PropertyRef Name="ParentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgparent_ksgparent">
+          <End Role="ksgobject" Type="ksgobjectsModel.Store.ksgobject" Multiplicity="1" />
+          <End Role="ksgparent" Type="ksgobjectsModel.Store.ksgparent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgobject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgparent">
+              <PropertyRef Name="ChildID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgproperty_Resource">
+          <End Role="Resource" Type="ksgobjectsModel.Store.Resource" Multiplicity="1" />
+          <End Role="ksgproperty" Type="ksgobjectsModel.Store.ksgproperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgproperty">
+              <PropertyRef Name="ValueTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgvote_ksgvotetype">
+          <End Role="ksgvotetype" Type="ksgobjectsModel.Store.ksgvotetype" Multiplicity="1" />
+          <End Role="ksgvote" Type="ksgobjectsModel.Store.ksgvote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgvotetype">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgvote">
+              <PropertyRef Name="VoteTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resource_ResourceType">
+          <End Role="ResourceType" Type="ksgobjectsModel.Store.ResourceType" Multiplicity="1" />
+          <End Role="Resource" Type="ksgobjectsModel.Store.Resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResourceType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Resource">
+              <PropertyRef Name="ResourceTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ksgobjectsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ksgobjectsEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ksgbehaviors" EntityType="ksgobjectsModel.ksgbehavior" />
+          <EntitySet Name="ksgbehaviortriggers" EntityType="ksgobjectsModel.ksgbehaviortrigger" />
+          <EntitySet Name="ksgcontexts" EntityType="ksgobjectsModel.ksgcontext" />
+          <EntitySet Name="ksgmedias" EntityType="ksgobjectsModel.ksgmedia" />
+          <EntitySet Name="ksgmediatypes" EntityType="ksgobjectsModel.ksgmediatype" />
+          <EntitySet Name="ksgparents" EntityType="ksgobjectsModel.ksgparent" />
+          <EntitySet Name="Resources" EntityType="ksgobjectsModel.Resource" />
+          <EntitySet Name="ResourceTypes" EntityType="ksgobjectsModel.ResourceType" />
+          <AssociationSet Name="FK_ksgmedia_ksgmediatype" Association="ksgobjectsModel.FK_ksgmedia_ksgmediatype">
+            <End Role="ksgmediatype" EntitySet="ksgmediatypes" />
+            <End Role="ksgmedia" EntitySet="ksgmedias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgmedia_Resource" Association="ksgobjectsModel.FK_ksgmedia_Resource">
+            <End Role="Resource" EntitySet="Resources" />
+            <End Role="ksgmedia" EntitySet="ksgmedias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resource_ResourceType" Association="ksgobjectsModel.FK_Resource_ResourceType">
+            <End Role="ResourceType" EntitySet="ResourceTypes" />
+            <End Role="Resource" EntitySet="Resources" />
+          </AssociationSet>
+          <EntitySet Name="ksgvotes" EntityType="ksgobjectsModel.ksgvote" />
+          <EntitySet Name="ksgvotetypes" EntityType="ksgobjectsModel.ksgvotetype" />
+          <AssociationSet Name="FK_ksgvote_ksgvotetype" Association="ksgobjectsModel.FK_ksgvote_ksgvotetype">
+            <End Role="ksgvotetype" EntitySet="ksgvotetypes" />
+            <End Role="ksgvote" EntitySet="ksgvotes" />
+          </AssociationSet>
+          <EntitySet Name="ksgobjectproperties" EntityType="ksgobjectsModel.ksgobjectproperty" />
+          <EntitySet Name="sysdiagrams" EntityType="ksgobjectsModel.sysdiagram" />
+          <AssociationSet Name="FK_ksgobjectproperty_Resource" Association="ksgobjectsModel.FK_ksgobjectproperty_Resource">
+            <End Role="Resource" EntitySet="Resources" />
+            <End Role="ksgobjectproperty" EntitySet="ksgobjectproperties" />
+          </AssociationSet>
+          <EntitySet Name="ksgproperties" EntityType="ksgobjectsModel.ksgproperty" />
+          <AssociationSet Name="FK_ksgobjectproperty_ksgproperty" Association="ksgobjectsModel.FK_ksgobjectproperty_ksgproperty">
+            <End Role="ksgproperty" EntitySet="ksgproperties" />
+            <End Role="ksgobjectproperty" EntitySet="ksgobjectproperties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgproperty_Resource" Association="ksgobjectsModel.FK_ksgproperty_Resource">
+            <End Role="Resource" EntitySet="Resources" />
+            <End Role="ksgproperty" EntitySet="ksgproperties" />
+          </AssociationSet>
+          <EntitySet Name="Geocodes" EntityType="ksgobjectsModel.Geocode" />
+          <AssociationSet Name="FK_Geocode_Resource" Association="ksgobjectsModel.FK_Geocode_Resource">
+            <End Role="Resource" EntitySet="Resources" />
+            <End Role="Geocode" EntitySet="Geocodes" />
+          </AssociationSet>
+          <EntitySet Name="ksgobjects" EntityType="ksgobjectsModel.ksgobject" />
+          <AssociationSet Name="FK_ksgmedia_ksgobject" Association="ksgobjectsModel.FK_ksgmedia_ksgobject">
+            <End Role="ksgobject" EntitySet="ksgobjects" />
+            <End Role="ksgmedia" EntitySet="ksgmedias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgobject_Resource1" Association="ksgobjectsModel.FK_ksgobject_Resource1">
+            <End Role="Resource" EntitySet="Resources" />
+            <End Role="ksgobject" EntitySet="ksgobjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgobject_Resource2" Association="ksgobjectsModel.FK_ksgobject_Resource2">
+            <End Role="Resource" EntitySet="Resources" />
+            <End Role="ksgobject" EntitySet="ksgobjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgobjectproperty_ksgobject" Association="ksgobjectsModel.FK_ksgobjectproperty_ksgobject">
+            <End Role="ksgobject" EntitySet="ksgobjects" />
+            <End Role="ksgobjectproperty" EntitySet="ksgobjectproperties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgparent_ksgobject" Association="ksgobjectsModel.FK_ksgparent_ksgobject">
+            <End Role="ksgobject" EntitySet="ksgobjects" />
+            <End Role="ksgparent" EntitySet="ksgparents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ksgparent_ksgparent" Association="ksgobjectsModel.FK_ksgparent_ksgparent">
+            <End Role="ksgobject" EntitySet="ksgobjects" />
+            <End Role="ksgparent" EntitySet="ksgparents" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="ksgbehavior">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="WebServiceUrl" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ksgbehaviortrigger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ContextID" Type="Int64" Nullable="false" />
+          <Property Name="ObjectID" Type="Guid" Nullable="false" />
+          <Property Name="BehaviorID" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ksgcontext">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ksgmedia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ResourceID" Type="Int64" Nullable="false" />
+          <Property Name="KSGObjectID" Type="Guid" Nullable="false" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ksgmediatype" Relationship="ksgobjectsModel.FK_ksgmedia_ksgmediatype" FromRole="ksgmedia" ToRole="ksgmediatype" />
+          <NavigationProperty Name="Resource" Relationship="ksgobjectsModel.FK_ksgmedia_Resource" FromRole="ksgmedia" ToRole="Resource" />
+          <Property Type="Int32" Name="UpVotes" Nullable="false" />
+          <Property Type="Int32" Name="DownVotes" Nullable="false" />
+          <NavigationProperty Name="ksgobject" Relationship="ksgobjectsModel.FK_ksgmedia_ksgobject" FromRole="ksgmedia" ToRole="ksgobject" />
+        </EntityType>
+        <EntityType Name="ksgmediatype">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ksgmedias" Relationship="ksgobjectsModel.FK_ksgmedia_ksgmediatype" FromRole="ksgmediatype" ToRole="ksgmedia" />
+        </EntityType>
+        <EntityType Name="ksgparent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ChildID" Type="Guid" Nullable="false" />
+          <Property Name="ParentID" Type="Guid" Nullable="false" />
+          <Property Name="UpVotes" Type="Int32" Nullable="false" />
+          <Property Name="DownVotes" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ksgobject" Relationship="ksgobjectsModel.FK_ksgparent_ksgobject" FromRole="ksgparent" ToRole="ksgobject" />
+          <NavigationProperty Name="ksgobject1" Relationship="ksgobjectsModel.FK_ksgparent_ksgparent" FromRole="ksgparent" ToRole="ksgobject" />
+          </EntityType>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ResourceTypeID" Type="Byte" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ksgmedias" Relationship="ksgobjectsModel.FK_ksgmedia_Resource" FromRole="Resource" ToRole="ksgmedia" />
+          <NavigationProperty Name="ResourceType" Relationship="ksgobjectsModel.FK_Resource_ResourceType" FromRole="Resource" ToRole="ResourceType" />
+          <NavigationProperty Name="ksgobjectproperties" Relationship="ksgobjectsModel.FK_ksgobjectproperty_Resource" FromRole="Resource" ToRole="ksgobjectproperty" />
+          <NavigationProperty Name="ksgproperties" Relationship="ksgobjectsModel.FK_ksgproperty_Resource" FromRole="Resource" ToRole="ksgproperty" />
+          <NavigationProperty Name="Geocodes" Relationship="ksgobjectsModel.FK_Geocode_Resource" FromRole="Resource" ToRole="Geocode" />
+          <NavigationProperty Name="ksgobjects" Relationship="ksgobjectsModel.FK_ksgobject_Resource1" FromRole="Resource" ToRole="ksgobject" />
+          <NavigationProperty Name="ksgobjects1" Relationship="ksgobjectsModel.FK_ksgobject_Resource2" FromRole="Resource" ToRole="ksgobject" />
+          </EntityType>
+        <EntityType Name="ResourceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Resources" Relationship="ksgobjectsModel.FK_Resource_ResourceType" FromRole="ResourceType" ToRole="Resource" />
+          <Property Type="Boolean" Name="Public" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ksgmedia_ksgmediatype">
+          <End Role="ksgmediatype" Type="ksgobjectsModel.ksgmediatype" Multiplicity="1" />
+          <End Role="ksgmedia" Type="ksgobjectsModel.ksgmedia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgmediatype">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgmedia">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgmedia_Resource">
+          <End Role="Resource" Type="ksgobjectsModel.Resource" Multiplicity="1" />
+          <End Role="ksgmedia" Type="ksgobjectsModel.ksgmedia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgmedia">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resource_ResourceType">
+          <End Role="ResourceType" Type="ksgobjectsModel.ResourceType" Multiplicity="1" />
+          <End Role="Resource" Type="ksgobjectsModel.Resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResourceType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Resource">
+              <PropertyRef Name="ResourceTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ksgvote">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Byte" Name="VoteTypeID" Nullable="false" />
+          <Property Type="Boolean" Name="UpVote" Nullable="false" />
+          <NavigationProperty Name="ksgvotetype" Relationship="ksgobjectsModel.FK_ksgvote_ksgvotetype" FromRole="ksgvote" ToRole="ksgvotetype" />
+          <Property Type="Guid" Name="UserID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ksgvotetype">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Byte" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Descriptoin" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ksgvotes" Relationship="ksgobjectsModel.FK_ksgvote_ksgvotetype" FromRole="ksgvotetype" ToRole="ksgvote" />
+        </EntityType>
+        <Association Name="FK_ksgvote_ksgvotetype">
+          <End Type="ksgobjectsModel.ksgvotetype" Role="ksgvotetype" Multiplicity="1" />
+          <End Type="ksgobjectsModel.ksgvote" Role="ksgvote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgvotetype">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgvote">
+              <PropertyRef Name="VoteTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ksgobjectproperty">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="ksgobjectid" Nullable="false" />
+          <Property Type="Int64" Name="ksgpropertyid" Nullable="false" />
+          <Property Type="Int64" Name="ValueID" />
+          <NavigationProperty Name="Resource" Relationship="ksgobjectsModel.FK_ksgobjectproperty_Resource" FromRole="ksgobjectproperty" ToRole="Resource" />
+          <NavigationProperty Name="ksgproperty" Relationship="ksgobjectsModel.FK_ksgobjectproperty_ksgproperty" FromRole="ksgobjectproperty" ToRole="ksgproperty" />
+          <NavigationProperty Name="ksgobject" Relationship="ksgobjectsModel.FK_ksgobjectproperty_ksgobject" FromRole="ksgobjectproperty" ToRole="ksgobject" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_ksgobjectproperty_Resource">
+          <End Type="ksgobjectsModel.Resource" Role="Resource" Multiplicity="0..1" />
+          <End Type="ksgobjectsModel.ksgobjectproperty" Role="ksgobjectproperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgobjectproperty">
+              <PropertyRef Name="ValueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ksgproperty">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ValueTypeID" Nullable="false" />
+          <Property Type="Int32" Name="UpVotes" />
+          <Property Type="Int32" Name="DownVotes" />
+          <NavigationProperty Name="ksgobjectproperties" Relationship="ksgobjectsModel.FK_ksgobjectproperty_ksgproperty" FromRole="ksgproperty" ToRole="ksgobjectproperty" />
+          <NavigationProperty Name="Resource" Relationship="ksgobjectsModel.FK_ksgproperty_Resource" FromRole="ksgproperty" ToRole="Resource" />
+        </EntityType>
+        <Association Name="FK_ksgobjectproperty_ksgproperty">
+          <End Type="ksgobjectsModel.ksgproperty" Role="ksgproperty" Multiplicity="1" />
+          <End Type="ksgobjectsModel.ksgobjectproperty" Role="ksgobjectproperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgproperty">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgobjectproperty">
+              <PropertyRef Name="ksgpropertyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgproperty_Resource">
+          <End Type="ksgobjectsModel.Resource" Role="Resource" Multiplicity="1" />
+          <End Type="ksgobjectsModel.ksgproperty" Role="ksgproperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgproperty">
+              <PropertyRef Name="ValueTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Geocode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ResourceID" Nullable="false" />
+          <Property Type="Geography" Name="location" Nullable="false" />
+          <NavigationProperty Name="Resource" Relationship="ksgobjectsModel.FK_Geocode_Resource" FromRole="Geocode" ToRole="Resource" />
+        </EntityType>
+        <Association Name="FK_Geocode_Resource">
+          <End Type="ksgobjectsModel.Resource" Role="Resource" Multiplicity="1" />
+          <End Type="ksgobjectsModel.Geocode" Role="Geocode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Geocode">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ksgobject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="DefaultPicID" />
+          <Property Type="Int64" Name="DescriptionID" Nullable="false" />
+          <Property Type="Guid" Name="AuthorID" Nullable="false" />
+          <Property Type="Guid" Name="DefaultParentID" />
+          <Property Type="Boolean" Name="CoreObject" />
+          <Property Type="Boolean" Name="Category" />
+          <NavigationProperty Name="ksgmedias" Relationship="ksgobjectsModel.FK_ksgmedia_ksgobject" FromRole="ksgobject" ToRole="ksgmedia" />
+          <NavigationProperty Name="Resource" Relationship="ksgobjectsModel.FK_ksgobject_Resource1" FromRole="ksgobject" ToRole="Resource" />
+          <NavigationProperty Name="Resource1" Relationship="ksgobjectsModel.FK_ksgobject_Resource2" FromRole="ksgobject" ToRole="Resource" />
+          <NavigationProperty Name="ksgobjectproperties" Relationship="ksgobjectsModel.FK_ksgobjectproperty_ksgobject" FromRole="ksgobject" ToRole="ksgobjectproperty" />
+          <NavigationProperty Name="ksgparents" Relationship="ksgobjectsModel.FK_ksgparent_ksgobject" FromRole="ksgobject" ToRole="ksgparent" />
+          <NavigationProperty Name="ksgparents1" Relationship="ksgobjectsModel.FK_ksgparent_ksgparent" FromRole="ksgobject" ToRole="ksgparent" />
+        </EntityType>
+        <Association Name="FK_ksgmedia_ksgobject">
+          <End Type="ksgobjectsModel.ksgobject" Role="ksgobject" Multiplicity="1" />
+          <End Type="ksgobjectsModel.ksgmedia" Role="ksgmedia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgobject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgmedia">
+              <PropertyRef Name="KSGObjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgobject_Resource1">
+          <End Type="ksgobjectsModel.Resource" Role="Resource" Multiplicity="0..1" />
+          <End Type="ksgobjectsModel.ksgobject" Role="ksgobject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgobject">
+              <PropertyRef Name="DefaultPicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgobject_Resource2">
+          <End Type="ksgobjectsModel.Resource" Role="Resource" Multiplicity="1" />
+          <End Type="ksgobjectsModel.ksgobject" Role="ksgobject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgobject">
+              <PropertyRef Name="DescriptionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgobjectproperty_ksgobject">
+          <End Type="ksgobjectsModel.ksgobject" Role="ksgobject" Multiplicity="1" />
+          <End Type="ksgobjectsModel.ksgobjectproperty" Role="ksgobjectproperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgobject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgobjectproperty">
+              <PropertyRef Name="ksgobjectid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgparent_ksgobject">
+          <End Type="ksgobjectsModel.ksgobject" Role="ksgobject" Multiplicity="1" />
+          <End Type="ksgobjectsModel.ksgparent" Role="ksgparent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgobject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgparent">
+              <PropertyRef Name="ParentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ksgparent_ksgparent">
+          <End Type="ksgobjectsModel.ksgobject" Role="ksgobject" Multiplicity="1" />
+          <End Type="ksgobjectsModel.ksgparent" Role="ksgparent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ksgobject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ksgparent">
+              <PropertyRef Name="ChildID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ksgobjectsModelStoreContainer" CdmEntityContainer="ksgobjectsEntities1">
+          <EntitySetMapping Name="ksgbehaviors">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ksgbehavior">
+              <MappingFragment StoreEntitySet="ksgbehavior">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="WebServiceUrl" ColumnName="WebServiceUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ksgbehaviortriggers">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ksgbehaviortrigger">
+              <MappingFragment StoreEntitySet="ksgbehaviortrigger">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ContextID" ColumnName="ContextID" />
+                <ScalarProperty Name="ObjectID" ColumnName="ObjectID" />
+                <ScalarProperty Name="BehaviorID" ColumnName="BehaviorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ksgcontexts">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ksgcontext">
+              <MappingFragment StoreEntitySet="ksgcontext">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ksgmedias">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ksgmedia">
+              <MappingFragment StoreEntitySet="ksgmedia">
+                <ScalarProperty Name="DownVotes" ColumnName="DownVotes" />
+                <ScalarProperty Name="UpVotes" ColumnName="UpVotes" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+                <ScalarProperty Name="KSGObjectID" ColumnName="KSGObjectID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ksgmediatypes">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ksgmediatype">
+              <MappingFragment StoreEntitySet="ksgmediatype">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ksgparents">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ksgparent">
+              <MappingFragment StoreEntitySet="ksgparent">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ChildID" ColumnName="ChildID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="UpVotes" ColumnName="UpVotes" />
+                <ScalarProperty Name="DownVotes" ColumnName="DownVotes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resources">
+            <EntityTypeMapping TypeName="ksgobjectsModel.Resource">
+              <MappingFragment StoreEntitySet="Resource">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ResourceTypeID" ColumnName="ResourceTypeID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResourceTypes">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ResourceType">
+              <MappingFragment StoreEntitySet="ResourceType">
+                <ScalarProperty Name="Public" ColumnName="Public" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ksgvotes">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ksgvote">
+              <MappingFragment StoreEntitySet="ksgvote">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UpVote" ColumnName="UpVote" />
+                <ScalarProperty Name="VoteTypeID" ColumnName="VoteTypeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ksgvotetypes">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ksgvotetype">
+              <MappingFragment StoreEntitySet="ksgvotetype">
+                <ScalarProperty Name="Descriptoin" ColumnName="Descriptoin" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ksgobjectproperties">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ksgobjectproperty">
+              <MappingFragment StoreEntitySet="ksgobjectproperty">
+                <ScalarProperty Name="ValueID" ColumnName="ValueID" />
+                <ScalarProperty Name="ksgpropertyid" ColumnName="ksgpropertyid" />
+                <ScalarProperty Name="ksgobjectid" ColumnName="ksgobjectid" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ksgobjectsModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ksgproperties">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ksgproperty">
+              <MappingFragment StoreEntitySet="ksgproperty">
+                <ScalarProperty Name="DownVotes" ColumnName="DownVotes" />
+                <ScalarProperty Name="UpVotes" ColumnName="UpVotes" />
+                <ScalarProperty Name="ValueTypeID" ColumnName="ValueTypeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Geocodes">
+            <EntityTypeMapping TypeName="ksgobjectsModel.Geocode">
+              <MappingFragment StoreEntitySet="Geocode">
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ksgobjects">
+            <EntityTypeMapping TypeName="ksgobjectsModel.ksgobject">
+              <MappingFragment StoreEntitySet="ksgobject">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="CoreObject" ColumnName="CoreObject" />
+                <ScalarProperty Name="DefaultParentID" ColumnName="DefaultParentID" />
+                <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+                <ScalarProperty Name="DescriptionID" ColumnName="DescriptionID" />
+                <ScalarProperty Name="DefaultPicID" ColumnName="DefaultPicID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

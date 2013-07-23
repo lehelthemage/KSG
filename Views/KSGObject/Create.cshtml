@@ -1,0 +1,140 @@
+﻿@model ksg.ViewModels.KSGObjectViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create1</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>KSGObjectViewModel</legend>
+
+        <div>
+            @Html.LabelFor(model => model.IsCategory)
+            @Html.CheckBoxFor(model => model.IsCategory)
+        </div>
+
+        <div id="properties_window" style="float:right;">
+            <table id="properties_list">
+             <tr>
+                 <td>Name</td>
+                 <td>Type</td>
+                 <td class="values">Value</td>
+             </tr>
+           <tr><td>
+              
+            </table>
+            @Html.ActionLink("Add a property...", "GetNewProperty", null, new { id = "addItem" });
+
+            @Html.Partial("GeocoderPartial")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DefaultParentTitle, new { title = "Parent Name" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DefaultParentTitle, new { data_autocompleteurl = Url.Action("ParentAC"), autocomplete="off"   })
+            @Html.ValidationMessageFor(model => model.DefaultParentTitle)
+            @Html.HiddenFor(model => model.DefaultParentID);
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DefaultPicValue)
+            @Html.HiddenFor(model => model.DefaultPicValue)
+           
+        </div>
+        <div  class="editor-field">
+             @Html.Partial("SinglePicUploaderPartial")
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")   
+    @Scripts.Render("~/bundles/jquery")
+   @Scripts.Render("~/bundles/jqueryui")
+     <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEnex8bA_44wRBh8SRQHTAexfCkVR6Yoc&sensor=false">
+    </script>
+    
+    <script type="text/javascript" src="@Url.Content("~/Scripts/create-edit-utils.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/geocoder.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-timepicker-addon.js")"></script>
+    
+    <script type="text/javascript">
+        picUploadCallback = function (path) {
+            $("#DefaultPicValue").val(path);
+        };
+   
+
+        $(document).ready(function () {
+
+                $('*[data-autocompleteurl]')
+                    .each(function () {
+                        $(this).autocomplete({
+                            source: $(this).data("autocompleteurl"),
+                            minLength: 2,
+                            select: function (event, ui) {
+                                $('#DefaultParentID').val(ui.item.id);
+                                $('#DefaultParentTitle').val(ui.item.value);
+                            }
+                        });
+
+                       
+                    });
+            
+                $("#addItem").click(function () {
+                  
+                    $.ajax({
+                        url: this.href,
+                        cache: false,
+                        success: function (html) {
+                            $("#properties_list").append(html);
+                            Sys.Mvc.FormContext._Application_Load();
+                        }
+                    });
+
+                    
+                    
+                    return false;
+                });
+
+                $("#IsCategory").click(function () {
+                    TogglePropertyValues();
+                });
+
+            
+        });
+  
+
+    </script>
+}
